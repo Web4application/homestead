@@ -1,0 +1,1 @@
+10.0.0.10  laravel-homestead-playground.app
