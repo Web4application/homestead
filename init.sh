@@ -10,3 +10,6 @@ cp -i resources/after.sh after.sh
 cp -i resources/aliases aliases
 
 echo "Homestead initialized!"
+$ mkdir homestead && \
+    cd homestead && \
+    composer require --prefer-source laravel/homestead:dev-main
