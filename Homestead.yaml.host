@@ -1,0 +1,59 @@
+---
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+ 
+192.168.15.15   wordpress-site.dev
+ip: "127.0.0.1"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+  - ~/.ssh/id_rsa
+
+folders:
+  - map: ~/code
+    to: /home/vagrant/code
+
+sites:
+  - map: homestead.app
+    to: /home/vagrant/code/public
+
+databases:
+  - homestead
+
+features:
+  - mariadb: true
+  - postgresql: true
+  - ohmyzsh: true
+  - webdriver: true
+  - influxdb: true
+
+services:
+  - enabled:
+      - "mysql"
+#   - disabled:
+#       - "postgresql@11-main"
+
+# ports:
+#   - send: 33060  MySQL/MariaDB
+#     to: 3306
+#   - send: 4040
+#     to: 4040
+#   - send: 54320  PostgreSQL
+#     to: 5432
+#   - send: 8025 Mailpit
+#     to: 8025
+#   - send: 9600
+#     to: 9600
+#   - send: 27017
+#     to: 27017
