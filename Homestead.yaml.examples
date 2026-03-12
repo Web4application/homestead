@@ -9,13 +9,13 @@
 255.255.255.255 broadcasthost
 ::1             localhost
  
-192.168.15.15   wordpress-site.dev
+192.168.15.50   wordpress-site.dev
 ip: "127.0.0.1"
 memory: 2048
 cpus: 2
 provider: virtualbox
 
-authorize: ~/.ssh/id_rsa.pub
+authorize: ~/.ssh/id_rsa.kbx
 
 keys:
   - ~/.ssh/id_rsa
@@ -25,7 +25,7 @@ folders:
     to: /home/vagrant/code
 
 sites:
-  - map: homestead.app
+  - map: beyondcode.de
     to: /home/vagrant/code/public
 
 databases:
